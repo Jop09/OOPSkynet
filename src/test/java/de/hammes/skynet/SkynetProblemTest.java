@@ -24,7 +24,7 @@ public class SkynetProblemTest {
 		SkynetProblem.killAgent(sb);
 		assertFalse(sb.isAgentOnAGateway());
 	}
-	
+
 	@Test
 	public void testIsNodeInLink() {
 		int[] testLink = {1, 5};
@@ -32,7 +32,7 @@ public class SkynetProblemTest {
 		assertTrue(SkynetProblem.isNodeInLink(testLink, 5));
 		assertFalse(SkynetProblem.isNodeInLink(testLink, 7));
 	}
-	
+
 	@Test
 	public void testContainsLinkANodeFromArray() {
 		int[] testLink = {3, 5};
@@ -41,27 +41,25 @@ public class SkynetProblemTest {
 		assertTrue(SkynetProblem.containsLinkANodeFromArray(testLink, testArrayTrue));
 		assertFalse(SkynetProblem.containsLinkANodeFromArray(testLink, testArrayFalse));
 	}
-	
+
 	@Test
 	public void testIsLinkAnAgentGatewayConnection() {
-		
+
 		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(2);
 		int[][] links = sb.getNodeLinks();
-		
+
 		int[] testLinkFalse = links[0];
 		int testNodeFalse = sb.getAgentPosition();
 		int[] testArrayFalse = sb.getGatewayNodes();
 		assertFalse(SkynetProblem.isLinkAnAgentGatewayConnection(testLinkFalse, testNodeFalse, testArrayFalse, sb));
-		
+
 		sb.disconnectNodesBeforeAgentMovesOn(links[0][0], links[0][1]);
 		int[] testLinkTrue = links[3];
-		System.out.println("TEESSST " + testLinkTrue[0] + " " + testLinkTrue[1] + " " + sb.getAgentPosition());
 		int testNodeTrue = sb.getAgentPosition();
 		int[] testArrayTrue = sb.getGatewayNodes();
-		
 		assertTrue(SkynetProblem.isLinkAnAgentGatewayConnection(testLinkTrue, testNodeTrue, testArrayTrue, sb));
 	}
-	
+
 //	@Test
 //	public void testAgentHasGatewayConnection() {
 //		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(subnet);
