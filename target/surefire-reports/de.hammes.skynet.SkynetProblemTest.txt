@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: de.hammes.skynet.SkynetProblemTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec <<< FAILURE!
+de.hammes.skynet.SkynetProblemTest.testChooseDisconnectingNodes()  Time elapsed: 0.033 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at de.hammes.skynet.SkynetProblemTest.testChooseDisconnectingNodes(SkynetProblemTest.java:18)
+Caused by: java.lang.ClassNotFoundException: org.junit.Assert
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	... 19 more
+
+de.hammes.skynet.SkynetProblemTest.testContainsLinkANodeFromArray()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at de.hammes.skynet.SkynetProblemTest.testContainsLinkANodeFromArray(SkynetProblemTest.java:43)
+
+de.hammes.skynet.SkynetProblemTest.testKillAgent()  Time elapsed: 0.005 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at de.hammes.skynet.SkynetProblemTest.testKillAgent(SkynetProblemTest.java:26)
+
+de.hammes.skynet.SkynetProblemTest.testIsNodeInLink()  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NoClassDefFoundError: org/junit/Assert
+	at de.hammes.skynet.SkynetProblemTest.testIsNodeInLink(SkynetProblemTest.java:33)
+
