@@ -35,9 +35,6 @@ public class SkynetProblemTestParameterized {
 	public void testKillAgent() {
 			SkynetProblem.killAgent(sb);
 			assertFalse(sb.isAgentOnAGateway());
-//		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(subnet);
-//		SkynetProblem.killAgent(sb);
-//		assertFalse(sb.isAgentOnAGateway());
 	}
 
 

@@ -13,7 +13,7 @@ public class SkynetProblemTest {
 	@Test
 	public void testChooseDisconnectingNodes() {
 		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(subnet);
-    	int disconnectingNodes[] = SkynetProblem.chooseDisconnectingNodes(sb, true);
+    	int disconnectingNodes[] = SkynetProblem.chooseDisconnectingNodes(sb);
     	sb.disconnectNodesBeforeAgentMovesOn(disconnectingNodes[0], disconnectingNodes[1]);
 		assertFalse(sb.isAgentOnAGateway());
 	}
