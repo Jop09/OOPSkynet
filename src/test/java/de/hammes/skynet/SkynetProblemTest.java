@@ -12,8 +12,9 @@ public class SkynetProblemTest {
 	static int subnet = 2;
 	@Test
 	public void testChooseDisconnectingNodes() {
+		IStrategy strategy = new DeleteGatewayLinkStrategy();
 		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(subnet);
-    	int disconnectingNodes[] = SkynetProblem.chooseDisconnectingNodes(sb);
+    	int disconnectingNodes[] = strategy.chooseDisconnectingNodes(sb);
     	sb.disconnectNodesBeforeAgentMovesOn(disconnectingNodes[0], disconnectingNodes[1]);
 		assertFalse(sb.isAgentOnAGateway());
 	}
@@ -22,7 +23,7 @@ public class SkynetProblemTest {
 	public void testKillAgent() {
 		for (int i = 1; i < 50; i++) {
 			SubnetBackdoor sb = SkynetSubnet.createRandomSubnet(i);
-			SkynetProblem.killAgent(sb);
+			new SkyNet().killAgent(sb);
 			assertFalse(sb.isAgentOnAGateway());
 		}
 	}
@@ -30,9 +31,9 @@ public class SkynetProblemTest {
 	@Test
 	public void testIsNodeInLink() {
 		int[] testLink = {1, 5};
-		assertTrue(SkynetProblem.isNodeInLink(testLink, 1));
-		assertTrue(SkynetProblem.isNodeInLink(testLink, 5));
-		assertFalse(SkynetProblem.isNodeInLink(testLink, 7));
+		assertTrue(DeleteGatewayLinkStrategy.isNodeInLink(testLink, 1));
+		assertTrue(DeleteGatewayLinkStrategy.isNodeInLink(testLink, 5));
+		assertFalse(DeleteGatewayLinkStrategy.isNodeInLink(testLink, 7));
 	}
 
 	@Test
@@ -40,8 +41,8 @@ public class SkynetProblemTest {
 		int[] testLink = {3, 5};
 		int[] testArrayTrue = {1, 3, 4, 7, 9};
 		int[] testArrayFalse = {1, 2, 4, 7, 9};
-		assertTrue(SkynetProblem.linkContainsNodeFromArray(testLink, testArrayTrue));
-		assertFalse(SkynetProblem.linkContainsNodeFromArray(testLink, testArrayFalse));
+		assertTrue(DeleteGatewayLinkStrategy.linkContainsNodeFromArray(testLink, testArrayTrue));
+		assertFalse(DeleteGatewayLinkStrategy.linkContainsNodeFromArray(testLink, testArrayFalse));
 	}
 
 }

@@ -33,9 +33,8 @@ public class SkynetProblemTestParameterized {
 
 	@Test
 	public void testKillAgent() {
-			SkynetProblem.killAgent(sb);
+			new SkyNet().killAgent(sb);
 			assertFalse(sb.isAgentOnAGateway());
 	}
-
 
 }

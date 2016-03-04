@@ -8,6 +8,6 @@ public class executeSkynet {
 	public static void main(String[] args) {
 
 		SubnetBackdoor sb = SkynetSubnet.createBackdoorToExistingSubnet(2);
-		SkynetProblem.killAgent(sb);
+		new SkyNet().killAgent(sb);
 	}
 }
